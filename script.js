@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.testimonial-prev');
     const nextButton = document.querySelector('.testimonial-next');
     let currentTestimonial = 0;
+    let testimonialInterval; // Para controlar o intervalo do autoplay
 
     function showTestimonial(index) {
         testimonials.forEach((item, i) => {
@@ -42,30 +43,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function nextTestimonialAuto() {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+    }
+
+    function startAutoplay() {
+        if (testimonials.length > 1) {
+            testimonialInterval = setInterval(nextTestimonialAuto, 7000);
+        }
+    }
+
+    function stopAutoplay() {
+        clearInterval(testimonialInterval);
+    }
+
     if (testimonials.length > 0) {
         showTestimonial(currentTestimonial);
+        startAutoplay(); // Inicia o autoplay
 
         if (nextButton) {
             nextButton.addEventListener('click', () => {
+                stopAutoplay(); // Para o autoplay ao clicar
                 currentTestimonial = (currentTestimonial + 1) % testimonials.length;
                 showTestimonial(currentTestimonial);
+                startAutoplay(); // Reinicia o autoplay
             });
         }
-
         if (prevButton) {
             prevButton.addEventListener('click', () => {
+                stopAutoplay(); // Para o autoplay ao clicar
                 currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
                 showTestimonial(currentTestimonial);
+                startAutoplay(); // Reinicia o autoplay
             });
         }
-
-        // Auto-slide (opcional)
-        // setInterval(() => {
-        //     currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        //     showTestimonial(currentTestimonial);
-        // }, 7000);
     }
-
 
     // Atualizar ano no rodapé
     const currentYearSpan = document.getElementById('currentYear');
@@ -85,43 +98,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-    // "Simulação" de envio de formulário de contato
-    const contactForm = document.getElementById('web-contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = this.elements['name'].value;
-            const email = this.elements['email_user'].value;
-            const message = this.elements['message'].value;
-
-            if (!name || !email || !message) {
-                formStatus.textContent = 'Por favor, preencha todos os campos obrigatórios.';
-                formStatus.style.color = 'red';
-                return;
-            }
-            
-            formStatus.textContent = 'Enviando sua mensagem...';
-            formStatus.style.color = 'var(--title-color-on-light)';
-
-            setTimeout(() => {
-                formStatus.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
-                formStatus.style.color = 'green';
-                contactForm.reset();
-                
-                setTimeout(() => {
-                    formStatus.textContent = '';
-                }, 5000);
-
-            }, 2000);
-
-            // const formData = new FormData(this);
-            // const mailtoLink = `mailto:rafaelantonioalmeida192@gmail.com?subject=Contato Site Doutor Bateria: ${formData.get('name')}&body=Nome: ${formData.get('name')}%0AEmail: ${formData.get('email_user')}%0ATelefone: ${formData.get('phone_user') || 'Não informado'}%0A%0AMensagem:%0A${formData.get('message')}`;
-            // console.log("Para enviar manualmente:", mailtoLink);
-        });
-    }
-
+    // Inicialização do AOS já está no HTML, após o script do AOS.
 });
