@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.querySelector('.testimonial-prev');
     const nextButton = document.querySelector('.testimonial-next');
     let currentTestimonial = 0;
-    let testimonialInterval; // Para controlar o intervalo do autoplay
+    let testimonialInterval; 
 
     function showTestimonial(index) {
         testimonials.forEach((item, i) => {
@@ -60,22 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (testimonials.length > 0) {
         showTestimonial(currentTestimonial);
-        startAutoplay(); // Inicia o autoplay
+        startAutoplay(); 
 
         if (nextButton) {
             nextButton.addEventListener('click', () => {
-                stopAutoplay(); // Para o autoplay ao clicar
+                stopAutoplay(); 
                 currentTestimonial = (currentTestimonial + 1) % testimonials.length;
                 showTestimonial(currentTestimonial);
-                startAutoplay(); // Reinicia o autoplay
+                startAutoplay(); 
             });
         }
         if (prevButton) {
             prevButton.addEventListener('click', () => {
-                stopAutoplay(); // Para o autoplay ao clicar
+                stopAutoplay(); 
                 currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
                 showTestimonial(currentTestimonial);
-                startAutoplay(); // Reinicia o autoplay
+                startAutoplay(); 
             });
         }
     }
