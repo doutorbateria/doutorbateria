@@ -17,7 +17,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-body { font-family: var(--font-body); line-height: 1.6; /* background-color removido do body, seções controlam */ color: var(--dark-text); } /* Texto padrão escuro se nenhuma seção definir */
+body { font-family: var(--font-body); line-height: 1.6; color: var(--dark-text); }
 .container { max-width: 1100px; margin: auto; padding: 0 20px; overflow: hidden; }
 h1, h2, h3 { font-family: var(--font-title); margin-bottom: 1rem; }
 h1 { font-size: 2.8rem; } 
@@ -51,9 +51,11 @@ img { max-width: 100%; height: auto; }
     position: relative;
 }
 .parallax-section { /* Usado como container para o fundo da hero */
-    background-image: url('fundo01.jpg'); /* WALLPAPER AQUI */
-    background-attachment: fixed; background-position: center; 
-    background-repeat: no-repeat; background-size: cover;
+    background-image: url('fundo01.jpg'); /* Imagem padrão para Desktop */
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
 }
 #hero::before { /* Overlay sobre o wallpaper */
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -61,7 +63,7 @@ img { max-width: 100%; height: auto; }
 }
 .hero-content-wrapper { /* Wrapper para a caixa de vidro */
     position: relative; z-index: 2; text-align: center; 
-    width: 100%; padding: 20px; /* Padding para mobile */
+    width: 100%; padding: 20px; 
 }
 .frosted-glass-box {
     background-color: rgba(255, 255, 255, 0.15); 
@@ -199,9 +201,13 @@ img { max-width: 100%; height: auto; }
     #header .nav-menu.active { display: flex; }
     #header .nav-menu li { width: 100%; text-align: center; }
     #header .nav-menu li a { padding: 1rem; border-bottom: none; }
-    /* .animated-logo-container { display: none; } */ /* Já removido do HTML, então a regra CSS não é mais necessária */
-    /* .hero-mobile-motoqueiro { display: block; } */ /* Já removido do HTML */
-    .hero-content-wrapper { padding-top: 0; } /* Resetar padding se necessário, pois o flex centraliza */
+    
+    .parallax-section { /* Para Mobile */
+        background-image: url('fundo01-mobile.jpg'); 
+        /* background-attachment: scroll; /* Descomente se o parallax 'fixed' der problemas */
+    }
+
+    .hero-content-wrapper { padding-top: 0; } 
     .frosted-glass-box { padding: 2rem 1.5rem; max-width: 90%; }
     #hero h1 { font-size: 2.2rem; } 
     #hero .slogan { font-size: 1.3rem; }
@@ -213,7 +219,6 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 480px) {
     h1 { font-size: 2rem; } h2 { font-size: 1.8rem; }
     .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
-    /* .hero-mobile-motoqueiro { max-width: 100px; } */ /* Removido */
     #hero h1 { font-size: 2rem; } 
     #hero .slogan { font-size: 1.2rem; }
     .hero-static-logo { max-width: 80px; }
