@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startAutoplay() {
-        if (testimonials.length > 1) {
+        if (testimonials.length > 1) { // Só inicia autoplay se houver mais de um item
             testimonialInterval = setInterval(nextTestimonialAuto, 7000);
         }
     }
