@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startAutoplay() {
-        if (testimonials.length > 1) { // Só inicia autoplay se houver mais de um item
+        if (testimonials.length > 1) {
             testimonialInterval = setInterval(nextTestimonialAuto, 7000);
         }
     }
@@ -97,6 +97,4 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.2)';
         }
     });
-
-    // Inicialização do AOS já está no HTML, após o script do AOS.
 });
