@@ -130,7 +130,7 @@ body a:hover { color: #ff5c5c; } ul { list-style: none; } img { max-width: 100%;
 .promotion-cta { text-align: center; margin-top: 2rem; font-size: 1.1rem; }
 .promotion-cta .btn { margin-left: 0.5rem; }
 
-/* Por que escolher a Doutor Bateria? - Agora com fundo section-blue-navy */
+/* Por que escolher a Doutor Bateria? */
 #why-us.section-blue-navy h2 { color: var(--light-text); }
 .why-us-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 #why-us.section-blue-navy .why-us-item {
