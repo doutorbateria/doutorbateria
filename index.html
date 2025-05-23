@@ -3,118 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doutor Bateria - Site em Manutenção</title>
-    <link rel="icon" href="logo02.png" type="image/png"> <!-- Seu favicon -->
-    <!-- Google Fonts (mesmas da página principal) -->
+    <title>Doutor Bateria - Seu carro sempre ENERGIZADO!</title>
+    <link rel="icon" href="logo02.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Mínimo para a página de manutenção */
-        :root {
-            --primary-color: #D32F2F;
-            --secondary-color: #1A237E; /* Azul Marinho (para o fundo da página) */
-            --light-text: #FFFFFF;
-            --font-title: 'Montserrat', sans-serif;
-            --font-body: 'Open Sans', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--secondary-color); /* Fundo azul marinho */
-            background-image: url('fundo01.jpg'); /* Mesmo wallpaper da página principal */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: var(--light-text);
-            padding: 20px; /* Para evitar que a caixa toque nas bordas em telas pequenas */
-        }
-
-        .maintenance-overlay { /* Overlay escuro sobre o wallpaper */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); 
-            z-index: 1; 
-        }
-
-        .maintenance-content-wrapper {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            width: 100%;
-            max-width: 900px; /* Ajuste a largura máxima da caixa de vidro */
-        }
-
-        .frosted-glass-box {
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px) saturate(120%);
-            -webkit-backdrop-filter: blur(10px) saturate(120%);
-            padding: 1.5rem; /* Padding interno da caixa de vidro */
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            margin: auto;
-        }
-
-        .maintenance-image-container img {
-            display: block;
-            width: 100%; /* Imagem ocupa toda a largura da caixa de vidro */
-            height: auto;
-            border-radius: 8px; /* Opcional, se a imagem não tiver cantos arredondados */
-        }
-
-        .maintenance-message h1 {
-            font-family: var(--font-title);
-            font-size: 2rem;
-            margin-top: 1.5rem;
-            color: var(--light-text);
-        }
-
-        .maintenance-message p {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            color: #e0e0e0;
-        }
-
-        @media (max-width: 600px) {
-            .maintenance-message h1 {
-                font-size: 1.5rem;
-            }
-            .maintenance-message p {
-                font-size: 1rem;
-            }
-            .frosted-glass-box {
-                padding: 1rem;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="maintenance-overlay"></div>
-    <div class="maintenance-content-wrapper">
-        <div class="frosted-glass-box">
-            <div class="maintenance-image-container">
-                <img src="manutencao.png" alt="Site em Manutenção">
+
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo-link">
+                <img src="logo02.png" alt="Logo Doutor Bateria" id="logo-img">
+            </a>
+            <span class="mobile-brand-name">DOUTOR BATERIA</span>
+            <ul class="nav-menu">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#about-us">Quem Somos</a></li>
+                <li><a href="#brands">Marcas</a></li>
+                <li><a href="#promotions">Promoções</a></li>
+                <li><a href="#why-us">Diferenciais</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="maintenance-message">
-                <h1>Site em Manutenção</h1>
-                <p>Estamos trabalhando para melhorar sua experiência. Voltamos em breve!</p>
+        </nav>
+    </header>
+
+    <section id="hero" class="parallax-section">
+        <div class="hero-content-wrapper container">
+            <div class="frosted-glass-box">
+                <img src="logo02.png" alt="Doutor Bateria Logo Principal" class="hero-static-logo">
+                <h1>Doutor Bateria</h1>
+                <p class="slogan">Seu carro sempre ENERGIZADO!</p>
+                <a href="https://wa.me/5515997031664?text=Olá! Gostaria de um orçamento para bateria." target="_blank" class="btn btn-whatsapp pulse-animation">
+                    <i class="fab fa-whatsapp"></i> Orçamento Rápido via WhatsApp
+                </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="services" class="section section-light" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item" data-aos="fade-up" data-aos-delay="200"> <i class="fas fa-car-battery fa-3x"></i> <h3>Venda de Baterias</h3> <p>Ampla variedade das melhores marcas para seu veículo.</p> </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="250"> <i class="fas fa-tools fa-3x"></i> <h3>Instalação Especializada</h3> <p>Instalação rápida e segura por profissionais qualificados.</p> </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="300"> <i class="fas fa-bolt fa-3x"></i> <h3>Teste de Bateria</h3> <p>Verificamos a saúde da sua bateria gratuitamente.</p> </div>
+                <div class="service-item" data-aos="fade-up" data-aos-delay="350"> <i class="fas fa-recycle fa-3x"></i> <h3>Descarte Ecológico</h3> <p>Coletamos sua bateria usada e damos o destino correto.</p> </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="section section-dark" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Quem Somos</h2>
+            <div class="about-us-content" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-us-text">
+                    <p>Com <strong>anos de experiência</strong> no mercado de baterias automotivas, atuando em parceria com diversas empresas renomadas do setor, decidimos dar um novo e importante passo: a criação da <strong>Doutor Bateria</strong>.</p>
+                    <p>Nossa loja nasceu do desejo genuíno de oferecer um atendimento ainda mais <strong>próximo, personalizado e eficiente</strong>. Queremos servir com excelência tanto os clientes fiéis, que confiam em nosso trabalho há tempos, quanto os novos amigos que buscam soluções energéticas de confiança para seus veículos.</p>
+                    <p>Na Doutor Bateria, você encontra não apenas produtos de qualidade, mas uma equipe apaixonada pelo que faz, pronta para oferecer o melhor suporte e garantir que seu carro esteja sempre <strong>ENERGIZADO!</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="brands" class="section section-blue-navy" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Trabalhamos com as Melhores Marcas</h2>
+            <div class="brands-grid">
+                <img src="lider.png" alt="Bateria Lider" title="Lider" data-aos="fade-up" data-aos-delay="200">
+                <img src="heliar.png" alt="Bateria Heliar" title="Heliar" data-aos="fade-up" data-aos-delay="250">
+                <img src="moura.png" alt="Bateria Moura" title="Moura" data-aos="fade-up" data-aos-delay="300">
+                <img src="zetta.png" alt="Bateria Zetta" title="Zetta" data-aos="fade-up" data-aos-delay="350">
+            </div>
+        </div>
+    </section>
+
+    <section id="promotions" class="section section-dark" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Nossas Promoções</h2>
+            <div class="promotion-box-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="frosted-glass-box promotion-image-container">
+                    <img src="promo01.png" alt="Promoção Doutor Bateria">
+                </div>
+                <p class="promotion-cta" data-aos="fade-up" data-aos-delay="250">
+                    Aproveite nossas ofertas especiais! <a href="https://wa.me/5515997031664?text=Olá! Quero saber mais sobre as promoções." target="_blank" class="btn btn-primary">Fale Conosco no WhatsApp</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="section section-blue-navy" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Por que escolher a Doutor Bateria?</h2>
+            <div class="why-us-grid">
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="200"> <i class="fas fa-award"></i> <h3>Testes e Orçamentos Grátis</h3> </div>
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="250"> <i class="fas fa-clock"></i> <h3>Atendimento 24/7</h3> </div>
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="300"> <i class="fas fa-shipping-fast"></i> <h3>Entrega Rápida</h3> </div>
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="350"> <i class="fas fa-hand-holding-usd"></i> <h3>Preço Justo</h3> </div>
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="400"> <i class="fas fa-shield-alt"></i> <h3>Garantia de Qualidade</h3> </div>
+                <div class="why-us-item" data-aos="fade-up" data-aos-delay="450"> <i class="fas fa-user-tie"></i> <h3>Atendimento Especializado</h3> </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section section-light" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">O que nossos clientes dizem</h2>
+            <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-item active"> <p>"Atendimento nota 10! Me socorreram de madrugada e o preço foi justo. Recomendo!"</p> <h4>- Carlos S.</h4> </div>
+                <div class="testimonial-item"> <p>"A entrega foi super rápida e a instalação impecável. Profissionais de confiança."</p> <h4>- Mariana P.</h4> </div>
+                <div class="testimonial-item"> <p>"Finalmente encontrei um lugar que faz o descarte correto da bateria velha. Parabéns pela iniciativa!"</p> <h4>- João F.</h4> </div>
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section section-blue-navy" data-aos="fade-up">
+        <div class="container">
+            <h2 data-aos="fade-up" data-aos-delay="150">Entre em Contato</h2>
+            <div class="contact-info-wrapper" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+5515997031664">(15) 99703-1664</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:rafaelantonioalmeida192@gmail.com">rafaelantonioalmeida192@gmail.com</a></p>
+                    <div class="contact-whatsapp-button-container contact-main-whatsapp">
+                        <a href="https://wa.me/5515997031664?text=Olá! Preciso de ajuda com minha bateria." target="_blank" class="btn btn-whatsapp btn-large-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Chamar no WhatsApp (24h)
+                        </a>
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Eugênio Bernardi, 440 - Pq Bela Vista - Votorantim/SP</p>
+                    <p><i class="fas fa-clock"></i> Atendimento 24 horas, 7 dias por semana</p>
+                    <div class="social-icons">
+                        <a href="https://instagram.com/doutorbaterias12" target="_blank" title="Instagram Doutor Bateria">
+                            <i class="fab fa-instagram"></i> <span class="social-handle">@doutorbaterias12</span>
+                        </a>
+                        <a href="https://www.facebook.com/share/1ASdQ1SYf2/" target="_blank" title="Facebook Doutor Bateria">
+                            <i class="fab fa-facebook-f"></i> <span class="social-handle">Página do Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/doutor-bateria-208326366/" target="_blank" title="LinkedIn Doutor Bateria">
+                            <i class="fab fa-linkedin-in"></i> <span class="social-handle">LinkedIn Doutor Bateria</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container" data-aos="fade-up" data-aos-delay="250">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.7550222222994!2d-47.468203723810426!3d-23.541311960857634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c58a6bafe18713%3A0xcaba748a2064ee06!2sAv.%20Eug%C3%AAnio%20Bernardi%2C%20440%20-%20Parque%20Bela%20Vista%2C%20Votorantim%20-%20SP%2C%2018110-560!5e0!3m2!1spt-BR!2sbr!4v1746804450783!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <p>© <span id="currentYear"></span> Doutor Bateria - CNPJ: 60.329.282/0001-05. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por <a href="http://instagram.com/ideia_by_guttonerd" target="_blank" class="footer-credit-link"><b>ideIA by guttoNERD</b></a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script> AOS.init({ duration: 800, once: true, offset: 50, delay: 100, }); </script>
+    <script src="script.js"></script>
 </body>
 </html>
