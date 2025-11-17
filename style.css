@@ -64,7 +64,7 @@ body a:hover { color: #ff5c5c; } ul { list-style: none; } img { max-width: 100%;
     font-family: var(--font-title); font-size: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; text-align: center;
 }
-.btn-primary { background-color: var(--primary-color); color: #fff;  }
+.btn-primary { background-color: var(--primary-color); color: #fff !important;  }
 .btn-primary:hover { background-color: #A31F1F; color: #fff;
  transform: translateY(-2px); }
 .btn-whatsapp {
