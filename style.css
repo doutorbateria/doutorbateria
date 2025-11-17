@@ -65,7 +65,8 @@ body a:hover { color: #ff5c5c; } ul { list-style: none; } img { max-width: 100%;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; text-align: center;
 }
 .btn-primary { background-color: var(--primary-color); color: var(--light-text); }
-.btn-primary:hover { background-color: #A31F1F; transform: translateY(-2px); }
+.btn-primary:hover { background-color: #A31F1F; color: #fff;
+ transform: translateY(-2px); }
 .btn-whatsapp {
     background-color: var(--whatsapp-green); color: var(--light-text) !important; display: inline-flex;
     align-items: center; justify-content: center; border-radius: 50px; padding: 0.8rem 1.8rem;
